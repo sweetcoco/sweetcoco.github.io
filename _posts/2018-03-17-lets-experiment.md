@@ -2,6 +2,7 @@
 layout: post
 title:  "Let's Experiment"
 date:   2018-03-17
+category: personal
 excerpt: "... with creating content. Do you know how hard it is to write with Kourtney & Khloe Take The Hamptons on in the background?"
 image: "/images/2018-03-17-header.png"
 ---

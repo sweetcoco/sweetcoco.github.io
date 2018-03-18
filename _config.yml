@@ -35,14 +35,14 @@ disqus_shortname:   default
 
 # Social
 analytics-id:       "default"
-twitter:            https://twitter.com/coreyhowell
-facebook:           https://www.facebook.com/coreyhowellsoftware
-instagram:          https://www.instagram.com/coreyhowell/
-github:             https://github.com/sweetcoco
+twitter:            coreyhowell
+facebook:           coreyhowellsoftware
+instagram:          coreyhowell/
+github:             sweetcoco
 
 # personal
 location:           Cincinnati, OH
-phone:              310-318-5555
+phone:              555-555-5555
 email:              info@default.com
 
 # Gems
