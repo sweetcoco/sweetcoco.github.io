@@ -1,7 +1,7 @@
 # Site
-title:              Massively
-bio:                'Jekyll version of the Massively theme by HTML5UP'
-description:        "Jekyll version of the Massively theme by HTML5UP"
+title:              Corey Howell
+bio:                'My life in text'
+description:        "My life in text"
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
@@ -35,13 +35,13 @@ disqus_shortname:   default
 
 # Social
 analytics-id:       "default"
-twitter:            default
-facebook:           default
-instagram:          default
-github:             default
+twitter:            https://twitter.com/coreyhowell
+facebook:           https://www.facebook.com/coreyhowellsoftware
+instagram:          https://www.instagram.com/coreyhowell/
+github:             https://github.com/sweetcoco
 
 # personal
-location:           Los Angeles, CA
+location:           Cincinnati, OH
 phone:              310-318-5555
 email:              info@default.com
 
