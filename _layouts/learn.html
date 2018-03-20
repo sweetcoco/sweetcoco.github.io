@@ -39,27 +39,47 @@
 
           <article class="post featured">
             <header class="major">
-              <h2><a href="#">Blog blog bloggg</a></h2>
-              <p>I might actually break the blog up into different sections... I plan on doing some good guy hacker stuff, along with some 
-				  blockchain, devops, teaching, and personal stuff.
+              <h2><a href="#">Want to become a software engineer?</a></h2>
+              <p>This series assumes you know next to nothing about writing code. By the time you've finished, I hope to have given you the ability
+                  to engage in other posts here and also go out into the world and make anything you want. The goal is to turn you into a programmer.
 			  </p>
             </header>
+
+			<h2>Learn To Program With The World's Most Popular Programming Language: Javascript</h2>
+			
+			<div class="box align-left">
+					<h3>Course path (work in progress)</h3>
+					<ol>
+						<li>Developer set up (to write and run js)</li>
+						<li>Programming Fundamentals: Variables</li>
+						<ol>
+							<li>Variables & Data Types</li>
+							<li>Objects</li>
+							<li>Functions</li>
+							<li>Object Oriented & Functional Programming</li>
+						</ol>
+						<li>Programming in the browser (intro to html & css)</li>
+						<li>Using libraries & frameworks</li>
+						<li>Version control (intro to Git)</li>
+						<li>Talking to servers (intro to json)</li>
+					</ol>
+				</div>
 
           </article>
 					<!-- Post -->
 					<section class="posts">
-						{% for post in site.posts %}
-						{% unless post.category == "learn" %}
+						{% for post in site.categories.learn %}
 						{% assign mod3 = forloop.index | modulo: 3 %}
 							<article>
 								<header>
-									<span class="date">{{ post.date | date_to_string }}</span>
+
+									<span class="date">Lesson {{ post.lesson }}</span>
 									<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>
 								</header>
 								<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
 								<p>{{ post.excerpt }}</p>
 								<ul class="actions">
-									<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
+									<li><a href="{{ post.url | absolute_url }}" class="button">View</a></li>
 								</ul>
 							</article>
 							{% if mod3 == 0 %}
@@ -70,7 +90,6 @@
 
 							</article>
 							{% endif %}
-							{% endunless %}
 						{% endfor %}
 
 					</section>
