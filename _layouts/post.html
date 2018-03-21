@@ -35,14 +35,46 @@
                 <p>{{content}}</p>
             </section>
 
-            <div style="display: flex;">
-                {% if page.previous_in_category %}
+            <div style="display: flex; padding: 2rem;">
+
+                    {% assign cat = page.category %}
+
+                    {% for post in site.categories[cat] %}
+                      {% if post.url == page.url %}
+                        {% assign post_index0 = forloop.index0 %}
+                        {% assign post_index1 = forloop.index %}
+                      {% endif %}
+                    {% endfor %}
+                    
+                    {% for post in site.categories[cat] %}
+                      {% if post_index0 == forloop.index %}
+                        {% assign next_post = post %}
+                      {% endif %}
+                      {% if post_index1 == forloop.index0 %}
+                        {% assign prev_post = post %}
+                      {% endif %}
+                    {% endfor %}
+                    
+                    {% if prev_post %}
+                      
+                        <a href="{{ prev_post.url | absolute_url }}" class="button">< Previous Lesson</a>
+                    {% endif %}
+                    
+                    {% if next_post %}
+                        <a href="{{ next_post.url | absolute_url }}" class="button" style="margin-left: auto;">Next Lesson ></a>
+                    {% endif %}
+
+
+                {% comment %}
+                <!-- {% if page.previous_in_category %}
                     <a href="{{ page.previous_in_category.url | absolute_url }}" class="button">< Previous Lesson</a>
                 {% endif %}
 
                 {% if page.next_in_category %}
                     <a href="{{ page.next_in_category.url | absolute_url }}" class="button" style="margin-left: auto;">Next Lesson ></a>
-                {% endif %}
+                {% endif %} -->
+
+                {% endcomment %}
 
             </div>
 

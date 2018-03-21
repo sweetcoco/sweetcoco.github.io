@@ -1789,6 +1789,9 @@
 			overflow-x: auto;
 		} */
 
+		pre, code {
+			font-family: monospace;
+		}
 		
 
 		.highlight pre code table {
