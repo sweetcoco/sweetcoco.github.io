@@ -16,115 +16,98 @@ sitemap:
 -->
 <html>
 	<head>
-    {% include head.html %}
-
-
+    	{% include head.html %}
 	</head>
-	<body class="is-loading">
 
+	<body class="is-loading">
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
-
 				<!-- Intro -->
-					<div id="intro">
-            <h1>{{site.title}}</h1>
-						<h2>Code. Coffee. Tacos.</h2>
-						<p></p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+				<div id="intro">
+					<h1>{{site.title}}</h1>
+					<h2>Code. Coffee. Tacos.</h2>
+					<p></p>
+					<ul class="actions">
+						<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+					</ul>
+				</div>
 
 				<!-- Header -->
-					<header id="header">
-						<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
-					</header>
+				<header id="header">
+					<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
+				</header>
 
 				<!-- Nav -->
-					<nav id="nav">
-
-            {% include nav.html %}
-
-						<ul class="icons">
-              <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
-              <li><a href="https://facebook.com/{{site.facebook}}" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
-              <li><a href="https://instagram.com/{{site.instagram}}" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
-              <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+				<nav id="nav">
+            		{% include nav.html %}
+				</nav>
 
 				<!-- Main -->
-					<div id="main">
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2>Relax</h2><h2>It's just code</h2>
-								</header>
+				<div id="main">
+					<!-- Featured Post -->
+					<article class="post featured">
+						<header class="major">
+							<h2>Relax</h2><h2>It's just code</h2>
+						</header>
 
-                <p>
-									Before I was a wildly talented and highly sought-after software engineer, I was a kid with a strong interest
-									in writing code and a developing caffeine  dependency. I spent hours scouring the internet for answers to every 
-									programming question under the sun. I was constantly met with old outdated answers, threads that were closed 
-									with "Nevermind! Just figured it out!" and didn't actually post what their solution was, and trouble with just 
-									knowing <i>what to even google</i> in general.
-								</p>
-								<br />
-								<h2>I'm here to help you. For Free.</h2>
-								<p>
-									Everything on this blog is free to read. I'll teach you how to code, I'll walk you through building your first app 
-									and way beyond. However, there are no comment sections on my posts, the comment thread for each post is on my 
-									<a href="https://patreon.com/coreyhowell" rel="nofollow noopener noreferrer" target="_blank">Patreon</a>. 
-									I <u>always</u> respond.
-								</p>
+                		<p>
+							Before I was a wildly talented and highly sought-after software engineer with a full blown coffee addiction, I was a kid with a strong interest
+							in writing code and a developing caffeine  dependency. I spent hours scouring the internet for answers to every 
+							programming question under the sun. I was constantly met with old outdated answers, threads that were closed 
+							with "Nevermind! Just figured it out!" and didn't actually post what their solution was, and trouble with just 
+							knowing <i>what to even google</i> in general.
+						</p>
+						<br />
+						<h2>I'm here to help you. For Free.</h2>
+						<p>
+							Everything on this blog is free to read. I'll teach you how to code, I'll walk you through building your first app 
+							and way beyond. However, there are no comment sections on my posts, the comment thread for each post is on my 
+							<a href="https://patreon.com/coreyhowell" rel="nofollow noopener noreferrer" target="_blank">Patreon</a>. 
+							I <u>always</u> respond.
+						</p>
 								
-								<br />
-								<a href="https://patreon.com/coreyhowell" rel="nofollow noopener noreferrer" target="_blank">
-									<h2>For the price of a coffee, you can become a patron.</h2>
-								</a>
-								<p>
-									Patrons are able to ask any question on my Patreon page and I will answer to the best of my abilities.
-									I will even write sample code for you and hold your hand as much as possible. If you're not interested in asking
-									questions but you still want to let me know I'm doing a good job, even a $1 pledge is highly appreciated, and 
-									even comes with a small perk!
-								</p>
+						<br />
+						<a href="https://patreon.com/coreyhowell" rel="nofollow noopener noreferrer" target="_blank">
+							<h2>For the price of a coffee, you can become a patron.</h2>
+						</a>
+						<p>
+							Patrons are able to ask any question on my Patreon page and I will answer to the best of my abilities.
+							I will even write sample code for you and hold your hand as much as possible. If you're not interested in asking
+							questions but you still want to let me know I'm doing a good job, even a $1 pledge is highly appreciated, and 
+							even comes with a small perk!
+						</p>
 
-								<h3><a href="https://patreon.com/coreyhowell" rel="nofollow noopener noreferrer" target="_blank" class="button">patreon.com/coreyhowell</a></h3>
+						<h3><a href="https://patreon.com/coreyhowell" rel="nofollow noopener noreferrer" target="_blank" class="button">patreon.com/coreyhowell</a></h3>
 
-							</article>
+					</article>
 
-							<section class="posts">
-								<article>
-									<header>
-											<h2><a href="{{ "/learn" | absolute_url }}" class="button">Learn To Code</a></h2>
-									</header>
-									<p class="align-center">Go from zero to software engineer</p>
-								</article>
+					<section class="posts">
+						<article>
+							<header>
+								<h2><a href="{{ "/learn" | absolute_url }}" class="button">Learn To Code</a></h2>
+							</header>
+							<p class="align-center">Go from zero to software engineer</p>
+						</article>
 
-								<article>
-									<header>
-										<h2><a href="{{ "/blog" | absolute_url }}" class="button">Read The Blog</a></h2>
-									</header>
-									<p class="align-center">Tech content and ideas</p>
-								</article>
-							</section>
+						<article>
+							<header>
+								<h2><a href="{{ "/blog" | absolute_url }}" class="button">Read The Blog</a></h2>
+							</header>
+							<p class="align-center">Tech content and ideas</p>
+						</article>
+					</section>
 
-						<!-- Footer -->
-							<footer>
-                <ul class="actions">
-										<a href="https://patreon.com/coreyhowell" rel="nofollow noopener noreferrer" target="_blank" class="button">Become a patron</a>
-                </ul>
-							</footer>
+					<!-- Footer -->
+					<footer>
+						{% include foot.html %}
+					</footer>
 
-					</div>
+				</div> <!-- /main -->
 
-				<!-- Footer -->
-        <!-- {% include foot.html %} -->
-
-			</div>
-
+				<div id="copyright" />
+			</div><!-- /wrapper -->
 		<!-- Scripts -->
 		{% include scripts-main.html %}
-    {% include tracking.html %}
-
+    	{% include tracking.html %}
 	</body>
 </html>

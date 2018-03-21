@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Learn To Program With The World's Most Popular Programming Language"
+title:  "Setting Up Your Development Environment"
 date:   2018-03-17
 lesson: 1
 category: "learn"
@@ -19,6 +19,11 @@ To run javascript, or see it in action, you only need a browser. However, I'm go
 <p class="image"><span class="image right"><img src="{{ "/images/learn/lesson1/scratch.jpg" | absolute_url }}" alt="" /></span>
 Create a folder at the root of your machine, called Developer. Create another folder inside Developer called <code>scratch</code>.</p>
 </div>
+
+{% highlight javascript linenos %}
+var taco = 2;
+console.log('yr mom');
+{% endhighlight %}
 
 Back in VS Code, go to File > Open. Navigate to the `scratch` folder you just created, highlight it by clicking it once, and click 'open'.
 

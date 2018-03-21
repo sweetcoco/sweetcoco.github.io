@@ -7,84 +7,73 @@
 -->
 <html>
 	<head>
-    {% include head.html %}
-
+    	{% include head.html %}
 	</head>
 	<body class="is-loading">
-
 		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+		<div id="wrapper" class="fade-in">
+			<!-- Header -->
+			<header id="header">
+				<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
+			</header>
 
-				<!-- Header -->
-				<header id="header">
-					<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
-				</header>
+			<!-- Nav -->
+			<nav id="nav">
+				{% include nav.html %}
+			</nav>
 
+			<!-- Main -->
+			<div id="main">
+				<article class="post featured">
+					<header class="major">
+						<h2><a href="#">Blog blog bloggg</a></h2>
+						<p>I might actually break the blog up into different sections... I plan on doing some good guy hacker stuff, along with some 
+							blockchain, devops, teaching, and personal stuff.
+						</p>
+					</header>
+				</article>
 
-				<!-- Nav -->
-					<nav id="nav">
-
-            {% include nav.html %}
-
-						<ul class="icons">
-              <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
-              <li><a href="https://facebook.com/{{site.facebook}}" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
-              <li><a href="https://instagram.com/{{site.instagram}}" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
-              <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-				<div id="main">
-
-          <article class="post featured">
-            <header class="major">
-              <h2><a href="#">Blog blog bloggg</a></h2>
-              <p>I might actually break the blog up into different sections... I plan on doing some good guy hacker stuff, along with some 
-				  blockchain, devops, teaching, and personal stuff.
-			  </p>
-            </header>
-
-          </article>
-					<!-- Post -->
-					<section class="posts">
-						{% for post in site.posts %}
+				<!-- Post -->
+				<section class="posts">
+					{% for post in site.posts %}
 						{% unless post.category == "learn" %}
-						{% assign mod3 = forloop.index | modulo: 3 %}
-							<article>
-								<header>
-									<span class="date">{{ post.date | date_to_string }}</span>
-									<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>
-								</header>
-								<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
-								<p>{{ post.excerpt }}</p>
-								<ul class="actions">
-									<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
-								</ul>
-							</article>
+							{% assign mod3 = forloop.index | modulo: 3 %}
+								<article>
+									<header>
+										<span class="date">{{ post.date | date_to_string }}</span>
+										<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>
+									</header>
+									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
+									<p>{{ post.excerpt }}</p>
+									<ul class="actions">
+										<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								
 							{% if mod3 == 0 %}
-							<article>
-								<header>
-									<h2><a href="#">Sponsored</h2>
-								</header>
+								<article>
+									<header>
+										<h2><a href="#">Sponsored</h2>
+									</header>
 
-							</article>
+								</article>
 							{% endif %}
-							{% endunless %}
-						{% endfor %}
-
-					</section>
-
-					</div>
-
+						{% endunless %}
+					{% endfor %}
+				</section>
+				
 				<!-- Footer -->
-        <!-- {% include foot.html %} -->
+				<footer>
+					{% include foot.html %}
+				</footer>
 
-			</div>
+			</div><!-- /main -->
+			<div id="copyright" />
+		</div><!-- /wrapper -->
 
-			<!-- Scripts -->
-			{% include scripts-main.html %}
-			{% include tracking.html %}
+		<!-- Scripts -->
+		{% include scripts-main.html %}
+		{% include tracking.html %}
 
 	</body>
 </html>
