@@ -28,11 +28,15 @@
                 <header class="major">
                     <span class="date">Lesson {{page.lesson}}</span>
                     <h1>{{page.title}}</h1>
-                    <p>{{page.excerpt}}</p>
+                    <p style="font-size: 1rem;">If you like what I'm doing here, or want to join the discussion, you can become a patron at 
+                        <a href='http://patreon.com/coreyhowell'>http://patreon.com/coreyhowell</a>. 
+                        Patrons make it possible for me to keep doing what I love, spreading my knowledge!
+                    </p>
                 </header>
                 
                 <div class="image main"><img src="{{page.image}}" alt=""></div>
                 <p>{{content}}</p>
+                <p>If you have any questions or comments, click the "Go To Discussion" button below!</p>
             </section>
 
             <div style="display: flex; padding: 2rem;">
@@ -81,7 +85,7 @@
             <!-- Footer -->
             <footer>
                 <ul class="actions">
-                    <a href="https://patreon.com/coreyhowell" rel="nofollow noopener noreferrer" target="_blank" class="button special fit">Go To Discussion</a>
+                    <a href="{{page.patreon-post}}" rel="nofollow noopener noreferrer" target="_blank" class="button special fit">Go To Discussion</a>
                 </ul>
             </footer>
         </div><!-- /main -->

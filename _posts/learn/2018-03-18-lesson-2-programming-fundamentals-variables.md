@@ -3,100 +3,149 @@ layout: post
 title:  "JavaScript Programming Fundamentals: Variables & Data Types"
 date:   2018-03-18
 lesson: 2
+group: "fundamentals"
 category: "learn"
-excerpt: "some wrap up"
+excerpt: ""
+patreon-post: https://www.patreon.com/posts/17747159
 image: "/images/learn/lesson1/laptop-notepad.jpg"
 ---
 
 ## Computers are dumb
-Computers are not magic. A computer will do exactly what you tell it to do, even if you didn't mean what you said. Thats usually called a bug, and as a future programmer, you're going to see bugs that turn the universe upside down and make you think everything you know is a lie. And then it turns out you forgot a semi-colon somewhere and all is right in the world again.
+Computer's are not magic. In fact, there's a running joke that a computer is really just [a rock with lightning inside that we tricked into thinking](https://twitter.com/daisyowl/status/841802094361235456). A computer will do exactly what you tell it to do, even if you didn't mean what you said. The computer's strength is its ability to remember and then do work on given variables extremely fast. Thats about all it's good at.
 
-We've all done some algebra before, where _x + 2 = 7_ and you must solve for _x_. Computers are really good at remembering what _x_ is. That's why they can be so dumb and still be useful to us. As a programmer, your job is to tell the computer how to get _x_ so it can use it later: _x = 7 - 2_
-
-Now that _x_ is known to be 5, the computer will remember that forever. And when you need _x_ again, you don't need to solve, you can just use _x_ and the computer will put a 5 in its place. _x_ is called a variable, here.
+I've seen intros to programming go on at length trying to explain a philosophical introduction to programming... and I wrote a few and deleted them in the place of this very paragraph. We're going to just jump in to writing code. I just want you to remember back to your algebra days. Lets do a simple algebra problem with JavaScript.
 
 ## Variables
-Variables are a store of data. Under the hood, a computer has assigned an address in its memory to hold the value of a given variable. Thats part of the beauty of high level programming languages like JavaScript. We need not concern ourselves with finding available addresses in the computer's memory and assigning/moving bytes of data, etc. We can instead just use variables, and know that the _compiler_ or _interpreter_ (the browser is a javascript interpreter) is doing all of that for us, freeing us up to just write code. Lets look at how variables work.
+`x + 4 = 6`
 
-```
-var myName = "Corey";
-var myAge = 28;
-```
+As a human, its obvious that _x_ is 2. Lets write a program that can solve this problem. Clear out the code in main.js. Ready?
 
-- We have created two variables, `myName` and `myAge`.
-- _var_ is used to declare a new variable.
-- _=_ assigns the value to the variable name.
-- "Corey" is a _string_. A string is wrapped in " " or ' '.
-- 28 is a _number_. If it was "28" it would be a string.
-- writing variables like `myName` is called [Camel Case](https://en.wikipedia.org/wiki/Camel_case) and is conventional for multiword variables, as opposed to snake case which looks `my_name`, or hyphenated `my-name`.
-- variable names can start with letters and some characters (such as `_`) but they cannot start with numbers, and they cannot contain any spaces.
-- you end statements in javascript with a semicolon: `;`
+{% highlight js linenos %}
+{% raw %}
 
-These two variables are two different data types. This is important to know because if you try to do math with a string, you'll get unexpected results. Doing math on 28 and "28" are two very different things.
+// main.js
+var x = 6 - 4;
 
-### JavaScript's Data Types
+document.write(x + " + 4 = 6"); 
+
+{% endraw %}
+{% endhighlight %}
+
+JavaScript _sytax_ for _declaring_ a variable is `var` followed by a space, and then the _name_ of the variable. So it's easy to see on line 2, we have declared a variable named _x_.
+
+<fieldset class="box"><legend>Variables in (some) depth</legend>
+Variables are a store of data. Under the hood, a computer has assigned an address in its memory to hold the value of a given variable. Thats part of the beauty of high level programming languages like JavaScript. We need not concern ourselves with finding available addresses in the computer's memory and assigning/moving bytes of data, etc. We can instead just use variables, and know that the <i>compiler</i> or <i>interpreter</i> (the browser is a javascript interpreter) is doing all of that for us, freeing us up to just write code.
+</fieldset>
+
+### Some Quick Notes On Variables (and general programming)
+Programmers use conventions to keep us from going insane. So, for example, in my above code I used essentially three lines to write my program (lines 2, 3, & 4). I could've written that on one line though, JavaScript only cares about the semicolon at the end of the statement, not the line breaks, so this is completely valid:
+{% highlight js linenos %}
+{% raw %}
+var x = 6 - 4;document.write(x + " + 4 = 6");
+{% endraw %}
+{% endhighlight %}
+
+The problem is... this is really hard to read. The convention is to break up your code appropriately with new lines and indents as necessary.
+
+**CONVENTIONS:**
+
+- **[Camel Case](https://en.wikipedia.org/wiki/Camel_case)** - our variable here is just named _x_ but what if it was _firstNumber_? this is called camel case. The first word of your variable is lowercase, then capitalize the following first letters.
+- **Descriptive but brief** - Sure, its valid to name your variable _theSquareRootOfFirstNumberAndTheResultOfPiDividedByProbability_ but if you have an entire program written like this, your code will become unwieldy, take forever to type, and god help the next engineer that comes along to read this greek epic.
+
+**RULES:**
+- **Picky about first characters** - you cannot start a variable with a number, _1stNumber_ is not valid, you will get an error. Some special characters are valid, like the underscore: _\_firstNumber_ is a legit variable name. Dont get too fancy with these, stick with regular alphabet characters.
+- **Reserved keywords** - JavaScript has some reserved keywords that you cannot use as variable names because JavaScript uses them for its own purposes. Here's a list of them, we're not going to go over it, just know it exists: [Reserved Keywords](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords).
+
+
+## JavaScript Data Types
+Remember that whole thing about computers being dumb? They think in binary, which means everything in a computer's memory is a 0 or a 1. Turns out, if you put eight 0's or 1's next to each other, you get 256 possible combinations, right? (2^8 = 256 math!). 8 bits = 1 byte. A character is 1 byte, always. For example, the letter _a_ is represented as _01100001_, or _096_ if you convert it to a number.  So... this lesson is a lot of bytes. Not a lot for a computer, but a lot for a human.
+
+Why am I telling you this? I want you to understand what a data type is, and why knowing them matters to the computer. A single character is just that, something like _!_ or _z_. If you string a bunch of these together you get a... **String**. Strings are everywhere. A Facebook comment is a string, a tweet is a string, this post is a string. In JavaScript, strings are represented by wrapping your code in either single or double quotes:
+{% highlight js linenos %}
+{% raw %}
+var myString = "Thank you for reading my string! Wowee!";
+{% endraw %}
+{% endhighlight %}
+If you don't wrap that string in quotes, your program will crash, because it is actual nonsense to the computer. The computer needs to know what to do with different kinds of data - it ends up writing it all in binary but it does work on different data types differently (good luck multiplying a string by the number 100), so you have to be explicit about what you're writing.
+
+**Here's a table of JavaScript Data Types**
 
 | Type         | Description  |
 | ------------ |:-------------|
-|**String**    | a string is a list of characters 'strung' together. An example of a string would be a facebook comment, or the body of an      email. "This is a string, always wrapped in quotes." |
-|**Number**    | a number is a literal number. In javascript, a number can be `10` or it can be `10.5`. Both are valid numbers.      |
-|**Boolean**   | a boolean is a funny word, named after [George Boole](https://en.wikipedia.org/wiki/George_Boole). A Boolean is `true` or `false`. It can only be true or false. It is not "true" or "false". It is **true** or **false**. |
-|**Object**    | an object is a _dictionary_, or blueprint, made up of key-value pairs: `{favoriteFood: "tacos"}`. |
-|**undefined** | undefined is the value of a variable that has no value. lol. |
+|[**String**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting)    | a string is a list of characters 'strung' together. An example of a string would be a facebook comment, or the body of an      email. "This is a string, always wrapped in quotes." |
+|[**Number**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)    | a number is a literal number. In javascript, a number can be _10_ or it can be _10.5_. Both are valid numbers. _"10"_ is not a number, it is a string.      |
+|[**Boolean**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)   | a boolean is a funny word, named after [George Boole](https://en.wikipedia.org/wiki/George_Boole). A Boolean is _true_ or _false_. It can only be true or false. It is not "true" or "false". It is **true** or **false**. |
+|[**Object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Objects)    | an object is a _dictionary_, or blueprint, made up of key-value pairs: `{favoriteFood: "tacos"}`. (we'll get to this later. I know it sounds confusing.) |
+|[**undefined**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) | undefined is the value of a variable that has no value. lol. |
 
-### Manipulating Variables
-Lets look back at the two variables I created above. If we pretend for a moment that I wanted to write the world's lamest program, I could make a program that prints out `myAge` and `myName`. In fact, lets do that. Open main.js and delete the alert code thats currently in there.
 
-`main.js`
-```
-var myName = "Corey";
-var myAge = 28;
-var greeting = "Hello, my name is ";
 
-alert(greeting + myName);
-```
+## Lets Use Them
+Copy this into your main.js.
 
-<div class="box">
-<strong>Quick note:</strong> what we've done with the <code>greeting</code> and <code>myName</code> variables, inside the alert call, is called <strong>string interpolation</strong>. You can add strings to strings with the <strong>+</strong> operator, which is the same operator you'd use to add numbers together. JavaScript does its best to try to figure out what you want it to do with the <strong>+</strong> operator. So if you try to add a number to string, it will interpolate your number into the string. So doing this: <code>myName + myAge</code> will actually result in "Corey 28". I hope that makes sense.
-</div>
+{% highlight js linenos %}
+{% raw %}
+// main.js
+// this is called a comment, the program skips everything after // on a single line
+// its just for humans to read.
 
-You should see "Hello, my name is Corey" alerted. But what if we do something to change `myName` before we print it out? lets do this:
+/*
+this is a multiline comment
+so you don't have to do the // on every line,
+you can instead just wrap a long comment like this.
+*/
 
-`main.js`
-```
-var myName = "Corey";
-var myAge = 28;
-var greeting = "Hello, my name is ";
+// myNumber and aDecimal are both numbers.
+var myNumber = 6 - 4;
+var aDecimal = 2.4;
 
-myName = "Jim";
+// fullName is a string.
+var fullName = "Casey Jones";
 
-alert(greeting + myName);
-```
+// needsCoffee and isHungry are booleans.
+var needsCoffee = true;
+var isHungry = false;
 
-On line 1, we created myName and assigned it a value of **String** "Corey". Then on line 5 we reassigned myName to **String** "Jim". So by the time alert is called, myName is "Jim".
+// sum is undefined, could also be sum = undefined.
+var sum;
 
-## Use The Console
-This alert box is getting pretty annoying. As a developer, you have much better tools to read the output of your code. In the developer tools window (which you should always keep open when programming in the browser, so as to keep the cache disabled) you have a tab named "Console". Lets start using the console.
+// we are now setting sum equal to the sum of this equation.
+sum = aDecimal + myNumber;
 
-change main.js to look like this:
+// lets print this out to the browser
+document.write("My name is " + fullName);
+document.write("<br />"); // this is just html to add a new line between these.
+document.write("The sum of myNumber and aDecimal is " + sum);
+document.write("<br />");
+document.write("I need coffee: " + needsCoffee);
+document.write(" I am hungry: " + isHungry);
+{% endraw %}
+{% endhighlight %}
 
-`main.js`
-```
-var myName = "Corey";
-var birthYear = 1990;
-var thisYear = 2018;
-var myAge = thisYear - birthYear;
-var greeting = "Hello, my name is ";
+### Lets talk about whats going on here
+First, JavaScript executes from the top down. So the code on line 12 runs before the code on line 26. Which is good, because the code on line 26 is using the code from line 12 to do its equation. Next, we need to talk about what is happening in these _document.write()_ methods.
 
-myName = "Jim";
+When you see something like this in js: `"my name is " + fullName` this is called **string interpolation**. Again, you're seeing that _+_ operator (we talk about operators in the next lesson) but it doesn't mean to do math in this useage. Js does its best to guess what you want to do with the _+_ operator, based on the _DATA TYPES_ its being used with in context. We interpolated _fullName_ into our string above, so it just makes it one string, inputting the value of _fullName_ into the string for us. Useful stuff. 
 
-console.log(greeting + myName);
-console.log("I am " + myAge + " years old.");
-```
+Now, you might be asking yourself... _"Isn't sum a number type?"_ and wooo boy you're a sharp one. When you interpolate any data type into a string, it becomes a string as well. This is called _coercion_, it's useful but also dangerous. Other languages aren't so forgiving.
 
-Refreshing the page, you should see your new strings printed out in the console.
+I explained what comments were in the code, and then I used comments to explain the code. So you should understand comments by now, they're ignored by the compiler and only meant for me and you to read.
 
-## Some Notes
-JavaScript executes from the top down. That's why when we assign "Corey" to myName on line 1, it is _overwritten_ on line 7 by "Jim". Furthermore, if you were to move your console log up to line 6, you would see that "Corey" is printed out in the console, as the console is printed out before myName is reassigned to "Jim".
+## Introduction To The Console
+So far, we have been using _document.write()_ to see the results of our code. As a developer, you have much better tools to read the output of your code. In the developer tools window (which you should always keep open when programming in the browser, so as to keep the cache disabled) you have a tab named "Console". Lets start using the console. Change all of the _document.write()_ to _console.log()_, and replace the "\<br />" with "\n".
+{% highlight js linenos %}
+{% raw %}
+// lets print this out to the browser
+console.log("My name is " + fullName);
+console.log("\n"); // this is a newline character, we could put this in the log above or below as well.
+console.log("The sum of myNumber and aDecimal is " + sum);
+console.log("\n");
+console.log("I need coffee: " + needsCoffee);
+console.log(" I am hungry: " + isHungry);
+{% endraw %}
+{% endhighlight %}
 
-Try playing around with our tiny program. You can do some math with myAge and log that out in the console, write as many console logs as you like. Create some new variables and make some new strings. When you're ready, continue onto the next lesson.
+## Conclusion
+Great job. I know this might be somewhat overwhelming. There is a trick to learning how to write code: you need to write your own. You don't know much right now, but as lessons go on you'll be armed with more and more knowledge, and even though we will eventually build an app together, you should be writing code on your own, independent of our project(s).
+
+I want you to mess around with this code, try some things out, look at errors you might see in the console.
