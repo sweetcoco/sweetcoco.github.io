@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-description: Focus.
+description: Go from zero to software engineer.
 sitemap:
     priority: 0.7
     lastmod: 2018-03-17
