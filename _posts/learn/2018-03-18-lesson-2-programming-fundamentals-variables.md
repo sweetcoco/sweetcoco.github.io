@@ -55,6 +55,8 @@ The problem is... this is really hard to read. The convention is to break up you
 **RULES:**
 - **Picky about first characters** - you cannot start a variable with a number, _1stNumber_ is not valid, you will get an error. Some special characters are valid, like the underscore: _\_firstNumber_ is a legit variable name. Dont get too fancy with these, stick with regular alphabet characters.
 - **Reserved keywords** - JavaScript has some reserved keywords that you cannot use as variable names because JavaScript uses them for its own purposes. Here's a list of them, we're not going to go over it, just know it exists: [Reserved Keywords](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords).
+- **No Spaces** - you cannot have any spaces in a variable name.
+- **No Hyphens** - you cannot have any hyphens in a variable name.
 
 
 ## JavaScript Data Types

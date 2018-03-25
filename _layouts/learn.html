@@ -35,7 +35,7 @@
 					<h2>Learn To Program With The World's Most Popular Programming Language: Javascript</h2>
 				
 					<div class="box align-left">
-						<h3>Course path (work in progress)</h3>
+						<h3>Beginning course path - Learning To Program (work in progress)</h3>
 						<ol>
 							{% assign sorted = (site.categories.learn | sort: 'lesson') %}
 							{% for post in sorted %}
@@ -43,47 +43,29 @@
 							<li><a href="{{ post.url | absolute_url }}">{{post.title}}</a></li>
 							{% endfor %}
 
-							----
-							<li>Developer set up (to write and run js)</li>
-							<li>Programming Fundamentals: Variables</li>
-							<ol>
-								<li>Variables & Data Types</li>
-								<li>Objects</li>
-								<li>Functions</li>
-								<li>Object Oriented & Functional Programming</li>
-							</ol>
+							------ In Progress ------
+							<li>JavaScript Programming Fundamentals: Operators and If Else</li>
+							<li>JavaScript Programming Fundamentals: Arrays and Loops</li>
+							<li>JavaScript Programming Fundamentals: Functions</li>
+							<li>JavaScript Programming Fundamentals: Objects</li>
+						</ol>
+					</div>
+
+					<div class="box align-left">
+						<h3>Building our first application (work in progress)</h3>
+						<ol>
 							<li>Programming in the browser (intro to html & css)</li>
 							<li>Using libraries & frameworks</li>
 							<li>Version control (intro to Git)</li>
 							<li>Talking to servers (intro to json)</li>
+							<li>Writing a simple API server</li>
+							<li>Using a database</li>
+							<li>Encryption, Security, Authentication</li>
+							<li>Building The App</li>
 						</ol>
 					</div>
-				</article>
 
-				<!-- Post -->
-				<section class="posts">
-					{% for post in site.categories.learn %}
-						{% assign mod3 = forloop.index | modulo: 3 %}
-							<article>
-								<header>
-									<span class="date">Lesson {{ post.lesson }}</span>
-									<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>
-								</header>
-								<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
-								<p>{{ post.excerpt }}</p>
-								<ul class="actions">
-									<li><a href="{{ post.url | absolute_url }}" class="button">View</a></li>
-								</ul>
-							</article>
-						{% if mod3 == 0 %}
-							<article>
-								<header>
-									<h2><a href="#">Sponsored</h2>
-								</header>
-							</article>
-						{% endif %}
-					{% endfor %}
-				</section>
+				</article>
 
 				<!-- Footer -->
 				<footer>
