@@ -7,7 +7,6 @@ group: "fundamentals"
 category: "learn"
 excerpt: ""
 patreon-post: https://www.patreon.com/posts/17747159
-image: "/images/learn/lesson1/laptop-notepad.jpg"
 ---
 
 ## Computers are dumb
