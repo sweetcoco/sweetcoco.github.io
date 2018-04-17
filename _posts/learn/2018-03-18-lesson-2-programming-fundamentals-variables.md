@@ -126,9 +126,9 @@ document.write(" I am hungry: " + isHungry);
 ### Lets talk about whats going on here
 First, JavaScript executes from the top down. So the code on line 12 runs before the code on line 26. Which is good, because the code on line 26 is using the code from line 12 to do its equation. Next, we need to talk about what is happening in these _document.write()_ methods.
 
-When you see something like this in js: `"my name is " + fullName` this is called **string interpolation**. Again, you're seeing that _+_ operator (we talk about operators in the next lesson) but it doesn't mean to do math in this useage. Js does its best to guess what you want to do with the _+_ operator, based on the _DATA TYPES_ its being used with in context. We interpolated _fullName_ into our string above, so it just makes it one string, inputting the value of _fullName_ into the string for us. Useful stuff. 
+When you see something like this in js: `"my name is " + fullName` this is called **string concatenation**. Again, you're seeing that _+_ operator (we talk about operators in the next lesson) but it doesn't mean to do math in this useage. Js does its best to guess what you want to do with the _+_ operator, based on the _DATA TYPES_ its being used with in context. We concatenated _fullName_ onto our string above, so it just makes it one string, inputting the value of _fullName_ into the string for us. Useful stuff. 
 
-Now, you might be asking yourself... _"Isn't sum a number type?"_ and wooo boy you're a sharp one. When you interpolate any data type into a string, it becomes a string as well. This is called _coercion_, it's useful but also dangerous. Other languages aren't so forgiving.
+Now, you might be asking yourself... _"Isn't sum a number type?"_ and wooo boy you're a sharp one. When you concatenate any data type onto a string, it becomes a string as well. This is called _coercion_, it's useful but also dangerous. Other languages aren't so forgiving.
 
 I explained what comments were in the code, and then I used comments to explain the code. So you should understand comments by now, they're ignored by the compiler and only meant for me and you to read.
 
